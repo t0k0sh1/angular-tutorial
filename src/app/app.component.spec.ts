@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TitleComponent } from './shared/components/title/title.component';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, TitleComponent],
     }),
   );
 
@@ -24,6 +25,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-tutorial app is running!');
+    expect(compiled.querySelector('app-title h1')?.textContent).toContain('angular-tutorial');
   });
 });
